@@ -1,10 +1,9 @@
+const express = require("express")
+const app = express();
+const port = 5000;
 
 
 
-
-class UserController{
-    constructor(username,password){
-        this.username = username;
-        this.password = password;
-    }
-}
+app.listen(port,()=>{
+    console.log(`server running on port ${port}`)
+})
