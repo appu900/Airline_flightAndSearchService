@@ -10,12 +10,3 @@ module.exports = {
 
 
 
-class UserController{
-    constructor(dataModel){
-        this.dataModel = dataModel;
-    }
-
-    async create(data){
-        
-    }
-}
