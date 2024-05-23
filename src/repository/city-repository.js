@@ -11,7 +11,6 @@ class CityRepository {
         "something went wrong in the repository layer",
         error.message
       );
-      throw error;
     }
   }
 
@@ -29,7 +28,6 @@ class CityRepository {
         "something went wrong in the repository layer",
         error.message
       );
-      throw error;
     }
   }
 
@@ -44,7 +42,6 @@ class CityRepository {
         "something went wrong in the repository layer",
         error.message
       );
-      throw error;
     }
   }
 
