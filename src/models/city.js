@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       name: DataTypes.STRING,
       allowNulL:false,
+      unique:true,
     },
     {
       sequelize,
@@ -23,3 +24,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   return City;
 };
+
+
+
+
