@@ -4,13 +4,14 @@ class CityRepository {
   // ** create a city
   async createCity({ name }) {
     try {
-      const res = await City.create({ name });
+      const res = await City.create({ name:name });
       return res;
     } catch (error) {
       console.log(
         "something went wrong in the repository layer",
         error.message
       );
+      throw error;
     }
   }
 
