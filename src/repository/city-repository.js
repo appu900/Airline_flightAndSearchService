@@ -1,4 +1,5 @@
 const { City } = require("../models/index");
+const { Op } = require("sequelize");
 
 class CityRepository {
   // ** create a city
@@ -51,7 +52,6 @@ class CityRepository {
     try {
       console.log(payload);
 
-
       // const res = await City.update(payload, {
       //   where: {
       //     id: cityId,
@@ -73,19 +73,32 @@ class CityRepository {
   }
 
   // ** get all city
-
-  async getAllCities(){
+  // ** filter can be empty also
+  async getAllCities(filter) {
     try {
-       const responsePayload  = await City.findAll();
-       return responsePayload;
+      if (filter.name) {
+        const cities = await City.findAll({
+          where: {
+            name: {
+              [Op.startsWith]: filter.name,
+            },
+          },
+        });
+        return cities;
+      }
+
+      const responsePayload = await City.findAll();
+      return responsePayload;
     } catch (error) {
-      console.log("something went wrong in the repository layer",error.message);
+      console.log(
+        "something went wrong in the repository layer",
+        error.message
+      );
       throw error;
     }
   }
 }
 
 module.exports = CityRepository;
-
 
 // padhna padega bhai nhi nhi hoga

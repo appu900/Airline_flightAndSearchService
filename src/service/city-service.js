@@ -24,6 +24,7 @@ class CityService {
       throw error;
     }
   }
+
   async getCity(cityId) {
     try {
       const city = await this.cityRepository.getCity(cityId);
@@ -43,12 +44,12 @@ class CityService {
     }
   }
 
-  async getAllCities() {
+  async getAllCities(filter) {
     try {
-      const cities = await this.cityRepository.getAllCities();
+      const cities = await this.cityRepository.getAllCities({name:filter.name});
       return cities;
     } catch (error) {
-      console.log("something went wronng in service layer fetching all cities");
+      console.log("something went wronng in service layer fetching all cities",error.message);
       throw error;
     }
   }
