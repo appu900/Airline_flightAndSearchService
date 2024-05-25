@@ -45,6 +45,7 @@ const destroy = async (req, res) => {
 const update = async (req, res) => {
   try {
     const response = await cityService.updateCity(req.params.id, req.body);
+    console.log("response update a city",response)
     return res.status(200).json({
       data: response,
       success: true,
@@ -63,6 +64,7 @@ const update = async (req, res) => {
 
 const get = async (req, res) => {
   try {
+    console.log(req.params.id)
     const city = await cityService.getCity(req.params.id);
     return res.status(200).json({
       data: city,
@@ -76,7 +78,7 @@ const get = async (req, res) => {
       data: {},
       success: false,
       message: "cxan not get a city",
-      error: error,
+      error: error.message,
     });
   }
 };
@@ -91,3 +93,5 @@ module.exports = {
 
 // ** server/city/operations
 // ** create,update,destroy and getById
+
+

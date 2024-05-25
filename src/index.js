@@ -4,6 +4,8 @@ const { PORT } = require("./config/serverConfig");
 
 const CityRepository = require("./repository/city-repository");
 
+const CityService = require("./service/city-service");
+
 const ApiRoutes = require("./routes/index");
 
 const setupAndStartServer = async () => {
@@ -18,9 +20,6 @@ const setupAndStartServer = async () => {
 
   app.listen(PORT, async () => {
     console.log(`server is running on ${PORT}`);
-    // const cityRepo = new CityRepository();
-    // const response = await cityRepo.deleteCity(1);
-    // console.log(response);
   });
 };
 
