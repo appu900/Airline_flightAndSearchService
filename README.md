@@ -47,4 +47,8 @@
 - name
 
 
+# for seeders systax 
+- npx sequelize seed:generate --name add-Airports
+-  npx sequelize db:seed:all
+
 

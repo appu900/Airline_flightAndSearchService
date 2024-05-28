@@ -6,6 +6,9 @@ const CityRepository = require("./repository/city-repository");
 
 const CityService = require("./service/city-service");
 
+const db = require("./models/index");
+const sequelize = require("sequelize");
+
 const ApiRoutes = require("./routes/index");
 
 const setupAndStartServer = async () => {
@@ -20,7 +23,17 @@ const setupAndStartServer = async () => {
 
   app.listen(PORT, async () => {
     console.log(`server is running on ${PORT}`);
+
+    // console.log(process.env.SYNC_DB);
+
+    if (!process.env.SYNC_DB) {
+      db.sequelize.sync({
+        alert: true,
+      });
+    }
   });
 };
 
 setupAndStartServer();
+
+
