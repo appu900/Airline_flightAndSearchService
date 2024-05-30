@@ -54,7 +54,7 @@
 
 # filter on flight search ...
 - source -> destination
-- data
+- date
 - multicity flights
 - price 
 - time perriod
