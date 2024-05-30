@@ -4,7 +4,7 @@ const { Op } = require("sequelize");
 class FlightRepository {
   // ** funtion  to create a filter object
 
-  
+
   #createFilter(data) {
     let filter = {};
     let priceFilter = [];
@@ -86,3 +86,5 @@ module.exports = FlightRepository;
  *
  * }
  */
+
+
