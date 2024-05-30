@@ -52,3 +52,9 @@
 -  npx sequelize db:seed:all
 
 
+# filter on flight search ...
+- source -> destination
+- data
+- multicity flights
+- price 
+- time perriod
